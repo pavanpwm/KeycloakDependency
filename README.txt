@@ -4,7 +4,7 @@ This is a dependency spring boot project with keycloak + spring security configu
 All you need to do is 
 
 1. download the jar file from here
-https://github.com/pavanpwm/KeycloakDependency/raw/main/target/KeycloakDependency-0.0.1-SNAPSHOT.jar
+https://github.com/pavanpwm/KeycloakDependency/raw/main/KeycloakDependency-0.0.1-SNAPSHOT.jar
 
 2. add this in your spring boot projects build path.
 
@@ -93,3 +93,15 @@ copy following code to your pom.xml, then do <Maven Update>
 
 
 7. Now run the Main class.
+
+
+
+
+**********************************************************************************
+
+
+For those curious minds who want to know how I created above jar do two things:
+
+1. Import the above project to eclipse(preferred)
+2. The follow this video
+
