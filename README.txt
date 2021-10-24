@@ -1,13 +1,15 @@
-----INSTRUCTIONS----
 
-1. Create a maven project in Eclipse(preferred bcoz may have problems in updating classpaths)
+This is a dependency spring boot project with keycloak + spring security configured 
 
-2. Download KeycloakDependency-0.0.1-SNAPSHOT.jar
-https://github.com/pavanpwm/configured-keycloak-dependecy/blob/main/KeycloakDependency-0.0.1-SNAPSHOT.jar
+All you need to do is 
 
-3. Copy the jar to src/main/resources/
+1. download the jar file from here
+https://github.com/pavanpwm/KeycloakDependency/raw/main/target/KeycloakDependency-0.0.1-SNAPSHOT.jar
 
-4. Copy following config to src/main/resources/application.properties
+2. add this in your spring boot projects build path.
+
+
+3. Copy following config to src/main/resources/application.properties
 
 #url where keycloak is hosted
 keycloak.auth-server-url=http://localhost:8280/auth
@@ -16,32 +18,25 @@ keycloak.realm=SpringKeycloakPOC
 #client name
 keycloak.resource=api1
 keycloak.public-client=true
-#remove below comment if you are sending authentication token to any of this api endpoints
+#uncomment below line if you are sending authentication token to any of this api endpoints
 #keycloak.bearer-only=true
 #set different port for running multiple apis at a time
 server.port=8080
 #for CORS allowed origins
 # * means all origins are allowed.
 #you can specify an origin if you want allow only one origin
-this.api.allowed.origins=*
-
-
-5. Copy below main class to src/main/java/
-//you can name it however you want, but keep the main method same
-
-import keycloak.poc.KeycloakDependencyApplication;
-
-public class Api1Application {
-	public static void main(String[] args) {
-		KeycloakDependencyApplication.main(args);
-	}
-}
+origins.allowed=*
 
 
 
+4. Use below annotation for your SpringBootApplication with MAIN class
+
+@SpringBootApplication(scanBasePackages={"keycloak.poc"})
 
 
-6. 5. Copy following code to your pom.xml, then do <Maven Update>
+
+5. We need following depdndencies so,
+copy following code to your pom.xml, then do <Maven Update>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -53,13 +48,6 @@ public class Api1Application {
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>keycloak.dependency</groupId>
-			<artifactId>KeycloakDependency</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/KeycloakDependency-0.0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.keycloak</groupId>
@@ -105,25 +93,3 @@ public class Api1Application {
 
 
 7. Now run the Main class.
-
-
-
-
-
-
-
-
-
-NOTE: 
-
-You should configure Keycloak before doing this and change the configuration accordingly in application.properties file
-
-
-
-
-
-
-
-IF YOU ARE TOO LAZY TO DO ALL THIS THEN YOU CAN JUST IMPORT A MAVEN PROJECT FROM HERE AND JUST FOLLOW SOME INSTRUCTION THERE
-
-https://github.com/pavanpwm/spring-rest-starter-configured-with-keycloak
