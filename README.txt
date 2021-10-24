@@ -1,5 +1,10 @@
 
 This is a dependency spring boot project with keycloak + spring security configured 
+Before anything, you need to install and configure Keycloak Server on your pc. Follow this video
+https://youtu.be/kXrhF7dB7qI
+
+
+
 
 All you need to do is 
 
@@ -100,8 +105,9 @@ copy following code to your pom.xml, then do <Maven Update>
 **********************************************************************************
 
 
-For those curious minds who want to know how I created above jar do two things:
+For those curious minds who want to know how I created above jar?? Follow em
 
-1. Import the above project to eclipse(preferred)
-2. The follow this video
-
+1. Download the above project 
+2. Import to eclipse as maven project eclipse(preferred)
+3. Then follow this video
+https://youtu.be/VgN1FaPXU6A
