@@ -6,7 +6,7 @@ https://youtu.be/kXrhF7dB7qI
 
 
 
-All you need to do is 
+All you need to do now is 
 
 1. download the jar file from here
 https://github.com/pavanpwm/KeycloakDependency/raw/main/KeycloakDependency-0.0.1-SNAPSHOT.jar
