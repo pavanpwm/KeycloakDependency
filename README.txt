@@ -126,4 +126,4 @@ You should configure Keycloak before doing this and change the configuration acc
 
 IF YOU ARE TOO LAZY TO DO ALL THIS THEN YOU CAN JUST IMPORT A MAVEN PROJECT FROM HERE AND JUST FOLLOW SOME INSTRUCTION THERE
 
-
+https://github.com/pavanpwm/spring-rest-starter-configured-with-keycloak
