@@ -15,21 +15,19 @@ https://github.com/pavanpwm/KeycloakDependency/raw/main/KeycloakDependency-0.0.1
 
 
 3. Copy following config to src/main/resources/application.properties
+Note: you need to find your own keycloak configuration in keycloakadminConsole -> Client -> Intstallation
 
-#url where keycloak is hosted
-keycloak.auth-server-url=http://localhost:8280/auth
-#realm name
-keycloak.realm=SpringKeycloakPOC
-#client name
-keycloak.resource=api1
-keycloak.public-client=true
+keycloak.auth-server-url= <get it from keycloakadminConsole -> Client -> Intstallation>
+keycloak.realm= <get it from keycloakadminConsole -> Client -> Intstallation>
+keycloak.resource= <get it from keycloakadminConsole -> Client -> Intstallation>
+keycloak.public-client= <get it from keycloakadminConsole -> Client -> Intstallation>
 #uncomment below line if you are sending authentication token to any of this api endpoints
 #keycloak.bearer-only=true
 #set different port for running multiple apis at a time
 server.port=8080
 #for CORS allowed origins
 # * means all origins are allowed.
-#you can specify an origin if you want allow only one origin
+#you can specify an origin if you want be specific
 origins.allowed=*
 
 
